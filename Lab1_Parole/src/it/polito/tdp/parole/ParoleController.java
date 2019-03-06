@@ -105,9 +105,7 @@ public class ParoleController {
     	
     	long startTime1 = System.nanoTime();
     	elencoA.reset();
-    	//txtResult.clear();
     	long estimatedTime1 = System.nanoTime() - startTime1;
-    	//txtTempo.setText(Long.toString(System.nanoTime()));
     	txtTempoA.setText(Long.toString(estimatedTime1));
     }
     
@@ -125,22 +123,20 @@ public class ParoleController {
     	}
     	txtResult.setText(s);
     	long estimatedTime = System.nanoTime() - startTime;
-    	//txtTempo.setText(Long.toString(System.nanoTime()));
     	txtTempoL.setText(Long.toString(estimatedTime));
     	
     	
-    	
+    	txtResult.clear();
     	long startTime1 = System.nanoTime();
-    	String parolaCancellata1 = txtResult.getSelectedText().trim();
-    	elencoA.cancella(parolaCancellata1);
+    	elencoA.cancella(parolaCancellata);
     	String s1 = "";
     	LinkedList<String> ltemp1 = new LinkedList<String>(elencoA.getElenco());
     	Collections.sort(ltemp1, new ComparatoreDiParolerPerNome());
     	for(int i=0; i<ltemp1.size(); i++) {
-    		s += ltemp1.get(i).toString()+"\n";
+    		s1 += ltemp1.get(i).toString()+"\n";
     		
     	}
-    	txtResult.setText(s);
+    	txtResult.setText(s1);
     	long estimatedTime1 = System.nanoTime() - startTime1;
     	//txtTempo.setText(Long.toString(System.nanoTime()));
     	txtTempoA.setText(Long.toString(estimatedTime1));
